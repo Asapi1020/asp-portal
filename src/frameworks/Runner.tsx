@@ -1,6 +1,8 @@
+import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import type { Context } from "./helpers";
 import { App, theme } from "./react";
 
@@ -16,9 +18,12 @@ export function run(context: Context): void {
 	ReactDOM.createRoot(rootElement).render(
 		<React.StrictMode>
 			<ThemeProvider theme={theme}>
-				<AppContext.Provider value={context}>
-					<App />
-				</AppContext.Provider>
+				<CssBaseline />
+				<BrowserRouter>
+					<AppContext.Provider value={context}>
+						<App />
+					</AppContext.Provider>
+				</BrowserRouter>
 			</ThemeProvider>
 		</React.StrictMode>,
 	);
