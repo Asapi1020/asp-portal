@@ -6,20 +6,28 @@ import {
 	CardActionArea,
 	CardContent,
 	CardMedia,
+	Chip,
 	Container,
 	IconButton,
+	Link,
 	Typography,
 } from "@mui/material";
+import GekoTaro from "@this/assets/gekotaro_512.png";
+import { useAppContext } from "@this/frameworks/helpers";
 import type { JSX } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { GitHubIcon, SteamIcon, XIcon, YouTubeIcon } from "../components/Icons";
 import { theme } from "../theme";
 
 export const Home = (): JSX.Element => {
+	const context = useAppContext();
+	const [latestNews] = context.usecases.news.getNewsList(0, 5);
+
 	return (
 		<Container>
 			<Box mt={4} display="flex" alignItems="center">
 				<Box flex="1" display="flex" justifyContent="center">
-					<Avatar alt="asp avatar" src="https://github.com/Asapi1020.png?size=512" sx={{ width: 512, height: 512 }}>
+					<Avatar alt="asp avatar" src={GekoTaro} sx={{ width: 512, height: 512 }}>
 						avatar
 					</Avatar>
 				</Box>
@@ -91,21 +99,54 @@ export const Home = (): JSX.Element => {
 					最新情報
 				</Typography>
 
-				<Typography variant="body1" gutterBottom>
-					ここに最新情報が表示されます。あさぴっぴの最新のニュースやアップデートをチェックしてください。 (TBA)
-				</Typography>
+				{latestNews.map((news) => (
+					<Typography mt={2} key={news.id} variant="body2" width={"100%"}>
+						<Link component={RouterLink} to={`/news/${news.id}`} underline="none">
+							<Box
+								display="flex"
+								flexDirection="row"
+								sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 2 }}
+							>
+								<Box
+									sx={{ color: "black", backgroundColor: theme.palette.secondary.main, borderRadius: 2, padding: 1.5 }}
+								>
+									{news.createdAt.toLocaleDateString("ja-JP", {
+										year: "numeric",
+										month: "2-digit",
+										day: "2-digit",
+									})}
+									<Chip label={news.category} size="small" sx={{ ml: 1, backgroundColor: "black" }} />
+								</Box>
+								<Box
+									sx={{
+										color: "white",
+										borderRadius: 2,
+										padding: 1.5,
+										"&:hover": {
+											color: theme.palette.secondary.main,
+										},
+									}}
+								>
+									{news.title}
+								</Box>
+							</Box>
+						</Link>
+					</Typography>
+				))}
 
 				<Box mt={2}>
-					<Button variant="contained" color="primary">
-						もっと見る（TBA）
-					</Button>
+					<Link component={RouterLink} to={"/news"}>
+						<Button variant="contained" color="primary">
+							もっと見る
+						</Button>
+					</Link>
 				</Box>
 			</Box>
 
 			<Box mt={4} display="flex" justifyContent="center" alignItems="center" flexDirection="column">
 				<Card sx={{ width: 500 }}>
 					<CardActionArea>
-						<CardMedia component="img" height="140" image="pending.jpg" alt="game" />
+						<CardMedia component="img" height="140" image="https://i.imgur.com/GI7cZBC.jpeg" alt="game" />
 
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
@@ -125,7 +166,7 @@ export const Home = (): JSX.Element => {
 
 				<Card sx={{ mt: 4, width: 500 }}>
 					<CardActionArea>
-						<CardMedia component="img" height="140" image="pending.jpg" alt="programming" />
+						<CardMedia component="img" height="140" image="https://i.imgur.com/1ppHBfH.png" alt="programming" />
 
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
@@ -147,7 +188,7 @@ export const Home = (): JSX.Element => {
 
 				<Card sx={{ mt: 4, width: 500 }}>
 					<CardActionArea>
-						<CardMedia component="img" height="140" image="pending.jpg" alt="mountain" />
+						<CardMedia component="img" height="140" image="https://i.imgur.com/QnZxGKm.jpeg" alt="mountain" />
 
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
@@ -169,7 +210,7 @@ export const Home = (): JSX.Element => {
 
 				<Card sx={{ mt: 4, width: 500 }}>
 					<CardActionArea>
-						<CardMedia component="img" height="140" image="pending.jpg" alt="music" />
+						<CardMedia component="img" height="140" image="https://i.imgur.com/VmpSpUg.jpeg" alt="music" />
 
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
@@ -191,7 +232,7 @@ export const Home = (): JSX.Element => {
 
 				<Card sx={{ mt: 4, width: 500 }}>
 					<CardActionArea>
-						<CardMedia component="img" height="140" image="pending.jpg" alt="study" />
+						<CardMedia component="img" height="140" image="https://i.imgur.com/mx4bOls.jpeg" alt="study" />
 
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
