@@ -1,9 +1,9 @@
-import { NewsRepository } from "./NewsRepository";
+import { MarkdownRepository } from "./MarkdownRepository";
 
 export class Infra {
-	public News: NewsRepository;
+	public markdown: MarkdownRepository;
 
 	constructor() {
-		this.News = new NewsRepository();
+		this.markdown = new MarkdownRepository();
 	}
 }

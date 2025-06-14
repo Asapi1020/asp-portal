@@ -25,7 +25,7 @@ export const Home = (): JSX.Element => {
 
 	return (
 		<Container>
-			<Box mt={4} display="flex" alignItems="center">
+			<Box display="flex" alignItems="center">
 				<Box flex="1" display="flex" justifyContent="center">
 					<Avatar alt="asp avatar" src={GekoTaro} sx={{ width: 512, height: 512 }}>
 						avatar
@@ -100,7 +100,7 @@ export const Home = (): JSX.Element => {
 				</Typography>
 
 				{latestNews.map((news) => (
-					<Typography mt={2} key={news.id} variant="body2" width={"100%"}>
+					<Box mt={2} key={news.id} sx={{ typography: "body2" }} width={"100%"}>
 						<Link component={RouterLink} to={`/news/${news.id}`} underline="none">
 							<Box
 								display="flex"
@@ -108,7 +108,13 @@ export const Home = (): JSX.Element => {
 								sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 2 }}
 							>
 								<Box
-									sx={{ color: "black", backgroundColor: theme.palette.secondary.main, borderRadius: 2, padding: 1.5 }}
+									sx={{
+										color: "black",
+										backgroundColor: theme.palette.secondary.main,
+										borderRadius: 2,
+										padding: 1.5,
+										flex: 1,
+									}}
 								>
 									{news.createdAt.toLocaleDateString("ja-JP", {
 										year: "numeric",
@@ -117,6 +123,7 @@ export const Home = (): JSX.Element => {
 									})}
 									<Chip label={news.category} size="small" sx={{ ml: 1, backgroundColor: "black" }} />
 								</Box>
+
 								<Box
 									sx={{
 										color: "white",
@@ -125,13 +132,14 @@ export const Home = (): JSX.Element => {
 										"&:hover": {
 											color: theme.palette.secondary.main,
 										},
+										flex: 5,
 									}}
 								>
 									{news.title}
 								</Box>
 							</Box>
 						</Link>
-					</Typography>
+					</Box>
 				))}
 
 				<Box mt={2}>
@@ -145,7 +153,7 @@ export const Home = (): JSX.Element => {
 
 			<Box mt={4} display="flex" justifyContent="center" alignItems="center" flexDirection="column">
 				<Card sx={{ width: 500 }}>
-					<CardActionArea>
+					<CardActionArea component={RouterLink} to="/game">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/GI7cZBC.jpeg" alt="game" />
 
 						<CardContent>
@@ -165,7 +173,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Card sx={{ mt: 4, width: 500 }}>
-					<CardActionArea>
+					<CardActionArea component={RouterLink} to="/programming">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/1ppHBfH.png" alt="programming" />
 
 						<CardContent>
@@ -187,7 +195,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Card sx={{ mt: 4, width: 500 }}>
-					<CardActionArea>
+					<CardActionArea component={RouterLink} to="/mountain">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/QnZxGKm.jpeg" alt="mountain" />
 
 						<CardContent>
@@ -209,7 +217,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Card sx={{ mt: 4, width: 500 }}>
-					<CardActionArea>
+					<CardActionArea component={RouterLink} to="/music">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/VmpSpUg.jpeg" alt="music" />
 
 						<CardContent>
@@ -231,7 +239,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Card sx={{ mt: 4, width: 500 }}>
-					<CardActionArea>
+					<CardActionArea component={RouterLink} to="/study">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/mx4bOls.jpeg" alt="study" />
 
 						<CardContent>
@@ -255,7 +263,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Box mt={2}>
-					<Button variant="contained" color="primary">
+					<Button variant="contained" color="primary" component={RouterLink} to="/hobbies">
 						その他の趣味を見る（TBA）
 					</Button>
 				</Box>

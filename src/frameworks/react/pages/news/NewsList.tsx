@@ -21,7 +21,7 @@ export const NewsList = (): JSX.Element => {
 
 	return (
 		<>
-			<Typography mt={4} variant="h4" align="center" gutterBottom>
+			<Typography variant="h4" align="center" gutterBottom>
 				ニュース
 			</Typography>
 

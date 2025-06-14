@@ -1,6 +1,6 @@
 import { newsList } from "@this/data/newsList";
 import type { News } from "@this/domain";
-import type { NewsRepository } from "@this/infra/NewsRepository";
+import type { MarkdownRepository } from "@this/infra/MarkdownRepository";
 import type { Context } from "./helpers";
 
 export class NewsUsecase {
@@ -10,8 +10,8 @@ export class NewsUsecase {
 		this.context = context;
 	}
 
-	private get news(): NewsRepository {
-		return this.context.infra.News;
+	private get markdown(): MarkdownRepository {
+		return this.context.infra.markdown;
 	}
 
 	public getNewsById(id: string): News | undefined {
@@ -26,7 +26,7 @@ export class NewsUsecase {
 	}
 
 	public getNewsContent(id: string): string {
-		const content = this.news.getNewsContent(id) || "News content not found.";
+		const content = this.markdown.getNewsContent(id) || "News content not found.";
 		return content;
 	}
 }

@@ -8,7 +8,7 @@ export const RootLayout = (): JSX.Element => {
 	return (
 		<>
 			<Header />
-			<Container sx={{ p: 3, mt: 4 }}>
+			<Container sx={{ p: 3, mt: 8 }}>
 				<Outlet />
 			</Container>
 			<Footer />

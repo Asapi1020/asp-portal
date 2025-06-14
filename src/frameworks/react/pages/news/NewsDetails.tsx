@@ -21,7 +21,7 @@ export const NewsDetails = (): JSX.Element => {
 		: "";
 
 	return (
-		<Box mt={4} display="flex" justifyContent="center" alignItems="center">
+		<Box display="flex" justifyContent="center" alignItems="center">
 			<Card sx={{ width: 800 }}>
 				{news?.imageUrl && <CardMedia component="img" height="140" image={news.imageUrl} alt="news thumbnail" />}
 
