@@ -11,7 +11,10 @@ export const Header = (): JSX.Element => {
 						あさぴっぴポータル
 					</Link>
 				</Typography>
-
+				<Button color="inherit" component={RouterLink} to="/game">
+					ゲーム
+				</Button>
+				/
 				<Button color="inherit" component={RouterLink} to="/news">
 					ニュース
 				</Button>
