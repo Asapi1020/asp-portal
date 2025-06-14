@@ -108,7 +108,13 @@ export const Home = (): JSX.Element => {
 								sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 2 }}
 							>
 								<Box
-									sx={{ color: "black", backgroundColor: theme.palette.secondary.main, borderRadius: 2, padding: 1.5 }}
+									sx={{
+										color: "black",
+										backgroundColor: theme.palette.secondary.main,
+										borderRadius: 2,
+										padding: 1.5,
+										flex: 1,
+									}}
 								>
 									{news.createdAt.toLocaleDateString("ja-JP", {
 										year: "numeric",
@@ -126,6 +132,7 @@ export const Home = (): JSX.Element => {
 										"&:hover": {
 											color: theme.palette.secondary.main,
 										},
+										flex: 5,
 									}}
 								>
 									{news.title}
@@ -256,7 +263,7 @@ export const Home = (): JSX.Element => {
 				</Card>
 
 				<Box mt={2}>
-					<Button variant="contained" color="primary">
+					<Button variant="contained" color="primary" component={RouterLink} to="/hobbies">
 						その他の趣味を見る（TBA）
 					</Button>
 				</Box>

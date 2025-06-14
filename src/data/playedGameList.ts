@@ -577,4 +577,15 @@ export const playedGameList: PlayedGame[] = [
 		description:
 			"VRリズムゲームで、プレイヤーは音楽に合わせて、ビートに合わせたブロックを剣で切り裂いていきます。直感的な操作と、爽快感のあるゲームプレイが特徴です。",
 	},
+	{
+		id: "59",
+		title: "Minecraft",
+		thumbnailUrl:
+			"https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
+		playedAt: new Date("2024-09"),
+		releaseDate: new Date("2011-11-18"),
+		platform: "PC",
+		description:
+			"ブロックを使って自由に世界を構築するサンドボックスゲームで、プレイヤーは探索、建築、サバイバルなど、様々なスタイルで楽しむことができます。無限に生成される世界と、豊富なカスタマイズ要素が特徴です。",
+	},
 ];
