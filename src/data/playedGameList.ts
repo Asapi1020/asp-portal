@@ -383,7 +383,7 @@ export const playedGameList: PlayedGame[] = [
 		releaseDate: new Date("2025-02-28"),
 		platform: "PC",
 		description:
-			"モンスターハンターシリーズの第7世代で、広大なオープンワールドを探索しながら、様々なモンスターを狩るアクションRPGです。",
+			"モンスターハンターシリーズの第6世代で、広大なオープンワールドを探索しながら、様々なモンスターを狩るアクションRPGです。",
 	},
 	{
 		id: "39",
@@ -587,5 +587,87 @@ export const playedGameList: PlayedGame[] = [
 		platform: "PC",
 		description:
 			"ブロックを使って自由に世界を構築するサンドボックスゲームで、プレイヤーは探索、建築、サバイバルなど、様々なスタイルで楽しむことができます。無限に生成される世界と、豊富なカスタマイズ要素が特徴です。",
+	},
+	{
+		id: "60",
+		title: "Little Nightmares II",
+		thumbnailUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/860510/header.jpg?t=1730127763",
+		playedAt: new Date("2025-06"),
+		releaseDate: new Date("2021-02-11"),
+		platform: "PC",
+		description:
+			"Little Nightmares IIは、プレイヤーが小さなキャラクターを操作して、恐ろしい世界を探索しながら謎を解くアドベンチャーゲームです。独特の雰囲気と緊張感のあるゲームプレイが特徴です。",
+	},
+	{
+		id: "61",
+		title: "OUTLAST",
+		thumbnailUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238320/header.jpg?t=1666817106",
+		playedAt: new Date("2025-08"),
+		releaseDate: new Date("2013-09-04"),
+		platform: "PC",
+		description:
+			"OUTLASTは、プレイヤーがジャーナリストとなり、精神病院の恐怖を体験するサバイバルホラーゲームです。プレイヤーは武器を持たず、隠れることや逃げることが主な手段となります。",
+	},
+	{
+		id: "62",
+		title: "OUTLAST 2",
+		thumbnailUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/414700/header.jpg?t=1618944453",
+		playedAt: new Date("2025-09"),
+		releaseDate: new Date("2017-04-25"),
+		platform: "PC",
+		description:
+			"OUTLAST 2は、OUTLASTの続編で、プレイヤーがジャーナリストとなり、アリゾナの砂漠で起こるカルト集団の恐怖を体験するサバイバルホラーゲームです。前作同様、武器を持たず、隠れることや逃げることが主な手段となります。",
+	},
+	{
+		id: "63",
+		title: "Little Nightmares III",
+		thumbnailUrl:
+			"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1392860/c259e38d1d4f7879ec86933773430aedb8e45fab/header_japanese.jpg?t=1767887616",
+		playedAt: new Date("2025-10"),
+		releaseDate: new Date("2025-10-10"),
+		platform: "PC",
+		description:
+			"Little Nightmares IIIは、Little Nightmaresシリーズの続編で、プレイヤーが小さなキャラクターを操作して、恐ろしい世界を探索しながら謎を解くアドベンチャーゲームです。二人での協力プレイが可能になりました。",
+	},
+	{
+		id: "64",
+		title: "Monster Hunter: Rise / Sunbreak",
+		thumbnailUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1446780/header.jpg?t=1768870444",
+		playedAt: new Date("2025-05"),
+		releaseDate: new Date("2021-03-26"),
+		platform: "ニンテンドースイッチ",
+		description: "Monster Hunter: Rise / Sunbreakは、和風な世界観をテーマにしたモンスターハンターシリーズの一つです。",
+	},
+	{
+		id: "65",
+		title: "Monster Hunter XX",
+		thumbnailUrl:
+			"https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dwa65343aa/products/D70010000000522/heroBanner/bfe52b841ad4c0499566911607d10ecdba999218e5f99b43b9e9e87a4b9c9603.jpg",
+		playedAt: new Date("2025-05"),
+		releaseDate: new Date("2017-03-18"),
+		platform: "ニンテンドースイッチ",
+		description:
+			"Monster Hunter XXは、モンスターハンターシリーズの一つで、過去作の村やモンスターが多数登場する、集大成的な作品です。",
+	},
+	{
+		id: "66",
+		title: "モンハン日記 ぽかぽかアイルー村DX",
+		thumbnailUrl:
+			"https://www.capcom-games.com/product/wp-content/uploads/sites/3/2021/08/product_monhannikki-pokapokaairoumuradx_thumb.jpg",
+		playedAt: new Date("2025-05"),
+		releaseDate: new Date("2015-09-10"),
+		platform: "ニンテンドー3DS",
+		description:
+			"モンハン日記 ぽかぽかアイルー村DXは、モンスターハンターシリーズのスピンオフ作品で、アイルーたちの日常を描いたほのぼのとしたゲームです。",
+	},
+	{
+		id: "67",
+		title: "カービィのエアライダー",
+		thumbnailUrl: "https://www.nintendo.com/jp/games/switch2/aaaba/assets/img/top/mv_bg.webp?unoptimized=true",
+		playedAt: new Date("2026-01"),
+		releaseDate: new Date("2025-11-20"),
+		platform: "ニンテンドースイッチ2",
+		description:
+			"カービィのエアライダーは、カービィシリーズのスピンオフ作品で、エアライドマシンを操縦してレースやバトルを楽しむゲームです。",
 	},
 ];
