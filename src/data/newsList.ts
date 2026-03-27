@@ -14,4 +14,11 @@ export const newsList: News[] = [
 		createdAt: new Date("2025-06-14"),
 		imageUrl: "https://i.imgur.com/GI7cZBC.jpeg",
 	},
+	{
+		id: "002-game",
+		title: "ゲームページv1.1.0を公開しました",
+		category: Category.GAME,
+		createdAt: new Date("2026-03-27"),
+		imageUrl: "https://i.imgur.com/GI7cZBC.jpeg",
+	},
 ];
