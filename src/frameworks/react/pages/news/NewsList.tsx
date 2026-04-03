@@ -3,6 +3,7 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Pagination, Ty
 import { useAppContext } from "@this/frameworks/helpers";
 import type { JSX } from "react";
 import { Link as RouterLink, useSearchParams } from "react-router-dom";
+import { GridBackground } from "../../components/Background";
 
 const PAGE_SIZE = 12;
 
@@ -21,6 +22,7 @@ export const NewsList = (): JSX.Element => {
 
 	return (
 		<>
+			<GridBackground />
 			<Typography variant="h4" align="center" gutterBottom>
 				ニュース
 			</Typography>

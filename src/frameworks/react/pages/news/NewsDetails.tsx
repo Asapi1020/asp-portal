@@ -2,6 +2,7 @@ import { Box, Card, CardContent, CardHeader, CardMedia } from "@mui/material";
 import { useAppContext } from "@this/frameworks/helpers";
 import type { JSX } from "react";
 import { useParams } from "react-router-dom";
+import { GridBackground } from "../../components/Background";
 import { Markdown } from "../../components/Markdown";
 import { theme } from "../../theme";
 
@@ -22,6 +23,7 @@ export const NewsDetails = (): JSX.Element => {
 
 	return (
 		<Box display="flex" justifyContent="center" alignItems="center">
+			<GridBackground />
 			<Card sx={{ width: 800 }}>
 				{news?.imageUrl && <CardMedia component="img" height="140" image={news.imageUrl} alt="news thumbnail" />}
 

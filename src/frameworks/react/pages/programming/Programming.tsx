@@ -7,10 +7,9 @@ import {
 	TimelineOppositeContent,
 	TimelineSeparator,
 } from "@mui/lab";
-import { Avatar, Box, Button, Card, CardContent, Chip, Container, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Card, CardContent, Chip, Container, Link, Paper, Stack, Typography } from "@mui/material";
 import { type Variants, motion } from "framer-motion";
 import type { JSX } from "react";
-import { Link } from "react-router-dom";
 import { GridBackground } from "../../components/Background";
 import { GitHubIcon, SteamIcon, TypescriptIcon } from "../../components/Icons";
 
@@ -92,10 +91,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://github.com/Asapi1020/Discord-Bot-CDRecorder"
+											href="https://github.com/Asapi1020/Discord-Bot-CDRecorder"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>
@@ -233,10 +233,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://github.com/Asapi1020/CD-Combined-Edition"
+											href="https://github.com/Asapi1020/CD-Combined-Edition"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>
@@ -308,10 +309,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://steamcommunity.com/sharedfiles/filedetails/?id=2862691598"
+											href="https://steamcommunity.com/sharedfiles/filedetails/?id=2862691598"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Box display="flex" alignItems="center" gap={2} mb={2}>
@@ -399,10 +401,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://silly-maple-a31.notion.site/CD-Announcements-ea854482444e424d913a5fbafafb9f8f"
+											href="https://silly-maple-a31.notion.site/CD-Announcements-ea854482444e424d913a5fbafafb9f8f"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Typography variant="subtitle2" sx={{ fontWeight: "bold" }} color="text.primary">
@@ -463,10 +466,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 									>
 										<CardContent sx={{ p: "12px !important" }}>
 											<Link
-												to="https://github.com/Asapi1020/cd-record-leaderboard"
+												href="https://github.com/Asapi1020/cd-record-leaderboard"
 												target="_blank"
 												rel="noopener noreferrer"
 												color="inherit"
+												underline="none"
 											>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>
 													<GitHubIcon />
@@ -534,10 +538,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://github.com/Asapi1020/cd-eapi"
+											href="https://github.com/Asapi1020/cd-eapi"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>
@@ -587,10 +592,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://github.com/Asapi1020/youtube-announcer"
+											href="https://github.com/Asapi1020/youtube-announcer"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>
@@ -675,10 +681,11 @@ export const ProgrammingProfileHome = (): JSX.Element => {
 										}}
 									>
 										<Link
-											to="https://github.com/Asapi1020/asp-portal"
+											href="https://github.com/Asapi1020/asp-portal"
 											target="_blank"
 											rel="noopener noreferrer"
 											color="inherit"
+											underline="none"
 										>
 											<CardContent sx={{ p: "12px !important" }}>
 												<Stack direction="row" alignItems="center" spacing={1} mb={0.5}>

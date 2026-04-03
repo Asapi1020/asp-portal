@@ -134,7 +134,7 @@ export const Home = (): JSX.Element => {
 										"&:hover": {
 											color: theme.palette.secondary.main,
 										},
-										flex: 5,
+										flex: 4,
 									}}
 								>
 									{news.title}

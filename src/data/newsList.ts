@@ -21,4 +21,11 @@ export const newsList: News[] = [
 		createdAt: new Date("2026-03-27"),
 		imageUrl: "https://i.imgur.com/GI7cZBC.jpeg",
 	},
+	{
+		id: "003-programming",
+		title: "プログラミングページv1.0.0を公開しました",
+		category: Category.PROGRAMMING,
+		createdAt: new Date("2026-04-04"),
+		imageUrl: "https://i.imgur.com/1ppHBfH.png",
+	},
 ];
