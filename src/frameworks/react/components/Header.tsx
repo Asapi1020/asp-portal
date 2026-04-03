@@ -15,6 +15,10 @@ export const Header = (): JSX.Element => {
 					ゲーム
 				</Button>
 				/
+				<Button color="inherit" component={RouterLink} to="/programming">
+					プログラミング
+				</Button>
+				/
 				<Button color="inherit" component={RouterLink} to="/news">
 					ニュース
 				</Button>

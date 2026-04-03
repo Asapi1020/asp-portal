@@ -12,6 +12,7 @@ import { playedGameList } from "@this/data/playedGameList";
 import type { PlayedGame } from "@this/domain/game/PlayedGame";
 import { type Variants, motion } from "framer-motion";
 import { type JSX, useMemo } from "react";
+import { GridBackground } from "../../components/Background";
 
 export const Game = (): JSX.Element => {
 	const sortedGameList = playedGameList.sort((a, b) => b.playedAt.getTime() - a.playedAt.getTime());
@@ -45,6 +46,7 @@ export const Game = (): JSX.Element => {
 
 	return (
 		<>
+			<GridBackground />
 			<Typography variant="h4" align="center" gutterBottom>
 				あさぴっぴのゲーム歴
 			</Typography>

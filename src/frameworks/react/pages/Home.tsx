@@ -16,6 +16,7 @@ import GekoTaro from "@this/assets/gekotaro_512.png";
 import { useAppContext } from "@this/frameworks/helpers";
 import type { JSX } from "react";
 import { Link as RouterLink } from "react-router-dom";
+import { GridBackground } from "../components/Background";
 import { GitHubIcon, SteamIcon, XIcon, YouTubeIcon } from "../components/Icons";
 import { theme } from "../theme";
 
@@ -25,6 +26,7 @@ export const Home = (): JSX.Element => {
 
 	return (
 		<Container>
+			<GridBackground />
 			<Box display="flex" alignItems="center">
 				<Box flex="1" display="flex" justifyContent="center">
 					<Avatar alt="asp avatar" src={GekoTaro} sx={{ width: 512, height: 512 }}>
