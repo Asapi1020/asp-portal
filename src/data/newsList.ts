@@ -28,4 +28,11 @@ export const newsList: News[] = [
 		createdAt: new Date("2026-04-04"),
 		imageUrl: "https://i.imgur.com/1ppHBfH.png",
 	},
+	{
+		id: "004-article",
+		title: "記事「KF2というゲームが一人の男をどのように変えたか」を公開しました",
+		category: Category.ARTICLE,
+		createdAt: new Date("2026-05-23"),
+		imageUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/232090/header.jpg?t=1774538987",
+	},
 ];

@@ -5,6 +5,7 @@ export const Category = {
 	MOUNTAIN: "登山",
 	MUSIC: "音楽",
 	STUDY: "勉強",
+	ARTICLE: "記事",
 } as const;
 
 export type Category = (typeof Category)[keyof typeof Category];

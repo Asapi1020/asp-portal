@@ -12,7 +12,7 @@ export const Markdown = ({ content, components }: MarkdownProps): JSX.Element =>
 
 	const defaultComponents: Components = {
 		p: ({ children }) => (
-			<Typography variant="body1" sx={{ marginBottom: 2 }}>
+			<Typography variant="body1" sx={{ margin: 2 }}>
 				{children}
 			</Typography>
 		),

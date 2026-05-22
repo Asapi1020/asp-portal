@@ -1,7 +1,7 @@
 import { type JSX, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { RootLayout } from "./layouts/RootLayout";
-import { About, Game, Home, NewsList, NotFound, ProgrammingProfileHome } from "./pages";
+import { About, ArticleDetails, ArticleList, Game, Home, NewsList, NotFound, ProgrammingProfileHome } from "./pages";
 import { NewsDetails } from "./pages/news/NewsDetails";
 
 export const App = (): JSX.Element => {
@@ -14,6 +14,8 @@ export const App = (): JSX.Element => {
 					<Route path="/about" element={<About />} />
 					<Route path="/news" element={<NewsList />} />
 					<Route path="/news/:id" element={<NewsDetails />} />
+					<Route path="/articles" element={<ArticleList />} />
+					<Route path="/articles/:id" element={<ArticleDetails />} />
 					<Route path="/game" element={<Game />} />
 					<Route path="/programming" element={<ProgrammingProfileHome />} />
 					<Route path="*" element={<NotFound />} />

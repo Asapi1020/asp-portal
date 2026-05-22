@@ -11,6 +11,10 @@ export class MarkdownRepository {
 		return this.getContent(`news/${id}`);
 	}
 
+	public getArticleContent(id: string): string | null {
+		return this.getContent(`articles/${id}`);
+	}
+
 	public getContent(pathName: string): string | null {
 		const content = this.contentMap[`/src/content/${pathName}.md`];
 
