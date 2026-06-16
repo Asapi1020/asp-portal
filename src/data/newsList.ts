@@ -35,4 +35,10 @@ export const newsList: News[] = [
 		createdAt: new Date("2026-05-23"),
 		imageUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/232090/header.jpg?t=1774538987",
 	},
+	{
+		id: "005-article",
+		title: "記事「サングラスは眩しいからかけるんだよ」を公開しました",
+		category: Category.ARTICLE,
+		createdAt: new Date("2026-06-16"),
+	},
 ];

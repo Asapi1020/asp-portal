@@ -8,4 +8,10 @@ export const articleList: Article[] = [
 		createdAt: new Date("2026-05-23"),
 		imageUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/232090/header.jpg?t=1774538987",
 	},
+	{
+		id: "sun-glasses",
+		title: "サングラスは眩しいからかけるんだよ",
+		tags: ["お気持ち", "皮肉"],
+		createdAt: new Date("2026-06-16"),
+	},
 ];
