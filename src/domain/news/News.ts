@@ -8,4 +8,5 @@ export interface News {
 	updatedAt?: Date;
 	isHidden?: boolean;
 	imageUrl?: string;
+	directLink?: string;
 }

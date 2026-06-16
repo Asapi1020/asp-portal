@@ -103,7 +103,7 @@ export const Home = (): JSX.Element => {
 
 				{latestNews.map((news) => (
 					<Box mt={2} key={news.id} sx={{ typography: "body2" }} width={"100%"}>
-						<Link component={RouterLink} to={`/news/${news.id}`} underline="none">
+						<Link component={RouterLink} to={news.directLink || `/news/${news.id}`} underline="none">
 							<Box
 								display="flex"
 								flexDirection="row"

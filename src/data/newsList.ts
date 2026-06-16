@@ -40,5 +40,6 @@ export const newsList: News[] = [
 		title: "記事「サングラスは眩しいからかけるんだよ」を公開しました",
 		category: Category.ARTICLE,
 		createdAt: new Date("2026-06-16"),
+		directLink: "/articles/sun-glasses",
 	},
 ];

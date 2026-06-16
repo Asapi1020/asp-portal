@@ -30,7 +30,7 @@ export const NewsList = (): JSX.Element => {
 			<Grid mt={4} container spacing={2} columns={16}>
 				{newsList.map((news) => (
 					<Grid size={{ xs: 2, sm: 4, md: 4 }} key={news.id}>
-						<CardActionArea component={RouterLink} to={`/news/${news.id}`}>
+						<CardActionArea component={RouterLink} to={news.directLink || `/news/${news.id}`}>
 							<Card sx={{ height: "100%", borderColor: "grey.500", borderWidth: 1, borderStyle: "solid" }}>
 								{news.imageUrl ? (
 									<CardMedia component="img" height="140" image={news.imageUrl} alt="news thumbnail" />
