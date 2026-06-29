@@ -46,6 +46,6 @@ export const newsList: News[] = [
 		id: "006-responsive",
 		title: "レスポンシブデザインを導入しました",
 		category: Category.GENERAL,
-		createdAt: new Date("2026-06-17"),
+		createdAt: new Date("2026-06-29"),
 	},
 ];
