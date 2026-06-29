@@ -57,3 +57,11 @@ export const TypescriptIcon = ({ width = 24, height = 24 }): JSX.Element => {
 		</SvgIcon>
 	);
 };
+
+export const HamburgerIcon = ({ width = 24, height = 24 }): JSX.Element => {
+	return (
+		<SvgIcon sx={{ width, height }}>
+			<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+		</SvgIcon>
+	);
+};

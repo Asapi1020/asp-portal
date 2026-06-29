@@ -7,7 +7,7 @@ import {
 	TimelineOppositeContent,
 	TimelineSeparator,
 } from "@mui/lab";
-import { Avatar, Box, Paper, Typography } from "@mui/material";
+import { Avatar, Box, Container, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { playedGameList } from "@this/data/playedGameList";
 import type { PlayedGame } from "@this/domain/game/PlayedGame";
 import { type Variants, motion } from "framer-motion";
@@ -15,6 +15,10 @@ import { type JSX, useMemo } from "react";
 import { GridBackground } from "../../components/Background";
 
 export const Game = (): JSX.Element => {
+	const theme = useTheme();
+	// Check if the screen width is smaller than 'sm' (600px)
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
 	const sortedGameList = playedGameList.sort((a, b) => b.playedAt.getTime() - a.playedAt.getTime());
 
 	const groupedByYear = useMemo(() => {
@@ -45,16 +49,32 @@ export const Game = (): JSX.Element => {
 	};
 
 	return (
-		<>
+		<Container maxWidth="md" sx={{ py: 4 }}>
 			<GridBackground />
-			<Typography variant="h4" align="center" gutterBottom>
+			<Typography variant="h4" align="center" gutterBottom component="h1">
 				あさぴっぴのゲーム歴
 			</Typography>
 
-			<Timeline position="alternate" sx={{ mt: 4 }}>
+			<Timeline
+				position={isMobile ? "left" : "alternate"}
+				sx={{
+					mt: 4,
+					p: { xs: 0, sm: 2 },
+					// Adjust timeline alignment for mobile 'left' position
+					"& .MuiTimelineItem-root:before": {
+						display: isMobile ? "none" : "block",
+					},
+				}}
+			>
 				{sortedYears.map((year) => (
 					<TimelineItem key={year}>
-						<TimelineOppositeContent sx={{ m: "auto 0" }}>
+						{/* Hidden on mobile, shown on desktop */}
+						<TimelineOppositeContent
+							sx={{
+								m: "auto 0",
+								display: { xs: "none", sm: "block" },
+							}}
+						>
 							<Typography variant="h6" color="text.secondary">
 								{year}
 							</Typography>
@@ -65,7 +85,21 @@ export const Game = (): JSX.Element => {
 							<TimelineConnector />
 						</TimelineSeparator>
 
-						<TimelineContent sx={{ py: 2, px: 2 }}>
+						<TimelineContent sx={{ py: 2, px: { xs: 1, sm: 2 } }}>
+							{/* Visible only on mobile to indicate the year */}
+							<Typography
+								variant="h5"
+								color="secondary"
+								fontWeight="bold"
+								sx={{
+									display: { xs: "block", sm: "none" },
+									mb: 2,
+									ml: 1,
+								}}
+							>
+								{year}
+							</Typography>
+
 							{groupedByYear[Number(year)].map((game) => (
 								<motion.div
 									key={game.id}
@@ -74,16 +108,26 @@ export const Game = (): JSX.Element => {
 									viewport={{ once: true, amount: 0.2 }}
 									variants={fadeInUp}
 								>
-									<Paper elevation={3} sx={{ p: 2, mb: 2 }} key={game.id}>
-										<Box display="flex" alignItems="center" gap={2}>
+									<Paper elevation={3} sx={{ p: 2, mb: 2 }}>
+										<Box
+											display="flex"
+											flexDirection={{ xs: "column", sm: "row" }}
+											alignItems={{ xs: "flex-start", sm: "center" }}
+											gap={2}
+										>
 											<Avatar
 												variant="rounded"
 												src={game.thumbnailUrl}
 												alt={game.title}
-												sx={{ width: 64, height: 64 }}
+												sx={{
+													width: { xs: 48, sm: 64 },
+													height: { xs: 48, sm: 64 },
+												}}
 											/>
 											<Box>
-												<Typography variant="h6">{game.title}</Typography>
+												<Typography variant="h6" component="h2" sx={{ fontSize: { xs: "1.1rem", sm: "1.25rem" } }}>
+													{game.title}
+												</Typography>
 
 												<Typography variant="body2" color="textSecondary">
 													発売日:{" "}
@@ -99,7 +143,7 @@ export const Game = (): JSX.Element => {
 												</Typography>
 
 												{game.description && (
-													<Typography variant="body2" sx={{ mt: 1 }}>
+													<Typography variant="body2" sx={{ mt: 1, wordBreak: "break-word" }}>
 														{game.description}
 													</Typography>
 												)}
@@ -112,6 +156,6 @@ export const Game = (): JSX.Element => {
 					</TimelineItem>
 				))}
 			</Timeline>
-		</>
+		</Container>
 	);
 };

@@ -42,4 +42,10 @@ export const newsList: News[] = [
 		createdAt: new Date("2026-06-16"),
 		directLink: "/articles/sun-glasses",
 	},
+	{
+		id: "006-responsive",
+		title: "レスポンシブデザインを導入しました",
+		category: Category.GENERAL,
+		createdAt: new Date("2026-06-17"),
+	},
 ];

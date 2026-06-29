@@ -22,7 +22,7 @@ export const Footer = (): JSX.Element => {
 			</Typography>
 
 			<Typography mt={1} variant="body2" color="text.secondary">
-				© 2025 あさぴっぴポータル. All rights reserved.
+				© 2025-2026 あさぴっぴポータル. All rights reserved.
 			</Typography>
 		</Box>
 	);

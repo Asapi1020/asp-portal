@@ -25,19 +25,37 @@ export const Home = (): JSX.Element => {
 	const [latestNews] = context.usecases.news.getNewsList(0, 5);
 
 	return (
-		<Container>
+		<Container maxWidth="lg">
 			<GridBackground />
-			<Box display="flex" alignItems="center">
+			{/* Profile Section */}
+			<Box
+				display="flex"
+				flexDirection={{ xs: "column", md: "row" }}
+				alignItems="center"
+				justifyContent="center"
+				gap={{ xs: 4, md: 2 }}
+				py={{ xs: 4, md: 8 }}
+			>
 				<Box flex="1" display="flex" justifyContent="center">
-					<Avatar alt="asp avatar" src={GekoTaro} sx={{ width: 512, height: 512 }}>
+					<Avatar
+						alt="asp avatar"
+						src={GekoTaro}
+						sx={{
+							width: { xs: 256, sm: 384, md: 512 },
+							height: { xs: 256, sm: 384, md: 512 },
+							boxShadow: 3,
+						}}
+					>
 						avatar
 					</Avatar>
 				</Box>
 
 				<Box flex="1" display="flex" justifyContent="center" alignItems="center" flexDirection="column">
-					<Typography variant="h4">あさぴっぴ</Typography>
+					<Typography variant="h4" component="h1">
+						あさぴっぴ
+					</Typography>
 
-					<Typography variant="body1" align="center" sx={{ maxWidth: 400, mt: 2 }}>
+					<Typography variant="body1" align="center" sx={{ maxWidth: 400, mt: 2, px: 2 }}>
 						PCゲーマーであり、ゲーム実況者。
 						<br />
 						KF2 Mod開発者であり、Webエンジニア。
@@ -45,12 +63,13 @@ export const Home = (): JSX.Element => {
 						登山が趣味。エレクトーンとお勉強が特技。
 					</Typography>
 
-					<Box mt={3} display="flex" gap={2}>
+					<Box mt={3} display="flex" gap={2} flexWrap="wrap" justifyContent="center">
 						<IconButton
 							component="a"
 							href="https://www.youtube.com/@asapi1020"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
+							size="large"
 							sx={{ boxShadow: 3, backgroundColor: theme.palette.info.contrastText }}
 						>
 							<YouTubeIcon />
@@ -60,7 +79,8 @@ export const Home = (): JSX.Element => {
 							component="a"
 							href="https://github.com/Asapi1020"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
+							size="large"
 							sx={{ boxShadow: 3, backgroundColor: theme.palette.info.contrastText }}
 						>
 							<GitHubIcon />
@@ -70,7 +90,8 @@ export const Home = (): JSX.Element => {
 							component="a"
 							href="https://x.com/1020_asapi"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
+							size="large"
 							sx={{ boxShadow: 3, backgroundColor: theme.palette.info.contrastText }}
 						>
 							<XIcon />
@@ -80,7 +101,8 @@ export const Home = (): JSX.Element => {
 							component="a"
 							href="https://steamcommunity.com/id/asp1020/"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
+							size="large"
 							sx={{ boxShadow: 3, backgroundColor: theme.palette.info.contrastText }}
 						>
 							<SteamIcon />
@@ -89,52 +111,65 @@ export const Home = (): JSX.Element => {
 				</Box>
 			</Box>
 
+			{/* Latest News Section */}
 			<Box
 				mt={4}
 				display="flex"
 				justifyContent="center"
 				alignItems="center"
 				flexDirection="column"
-				sx={{ backgroundColor: theme.palette.info.contrastText, borderRadius: 2, padding: 4, boxShadow: 3 }}
+				sx={{
+					backgroundColor: theme.palette.info.contrastText,
+					borderRadius: 2,
+					padding: { xs: 2, sm: 4 },
+					boxShadow: 3,
+				}}
 			>
-				<Typography variant="h4" gutterBottom>
+				<Typography variant="h4" component="h2" gutterBottom>
 					最新情報
 				</Typography>
 
 				{latestNews.map((news) => (
-					<Box mt={2} key={news.id} sx={{ typography: "body2" }} width={"100%"}>
+					<Box mt={2} key={news.id} sx={{ typography: "body2" }} width="100%">
 						<Link component={RouterLink} to={news.directLink || `/news/${news.id}`} underline="none">
 							<Box
 								display="flex"
-								flexDirection="row"
-								sx={{ backgroundColor: theme.palette.background.paper, borderRadius: 2 }}
+								flexDirection={{ xs: "column", sm: "row" }}
+								sx={{
+									backgroundColor: theme.palette.background.paper,
+									borderRadius: 2,
+									overflow: "hidden",
+								}}
 							>
 								<Box
 									sx={{
 										color: "black",
 										backgroundColor: theme.palette.secondary.main,
-										borderRadius: 2,
 										padding: 1.5,
-										flex: 1,
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "space-between",
+										flex: { xs: "none", sm: 1 },
 									}}
 								>
-									{news.createdAt.toLocaleDateString("ja-JP", {
-										year: "numeric",
-										month: "2-digit",
-										day: "2-digit",
-									})}
+									<Box component="span">
+										{news.createdAt.toLocaleDateString("ja-JP", {
+											year: "numeric",
+											month: "2-digit",
+											day: "2-digit",
+										})}
+									</Box>
 									<Chip label={news.category} size="small" sx={{ ml: 1, backgroundColor: "black" }} />
 								</Box>
 
 								<Box
 									sx={{
 										color: "white",
-										borderRadius: 2,
 										padding: 1.5,
 										"&:hover": {
 											color: theme.palette.secondary.main,
 										},
-										flex: 4,
+										flex: { xs: "none", sm: 4 },
 									}}
 								>
 									{news.title}
@@ -144,8 +179,8 @@ export const Home = (): JSX.Element => {
 					</Box>
 				))}
 
-				<Box mt={2}>
-					<Link component={RouterLink} to={"/news"}>
+				<Box mt={3}>
+					<Link component={RouterLink} to="/news">
 						<Button variant="contained" color="primary">
 							もっと見る
 						</Button>
@@ -153,16 +188,25 @@ export const Home = (): JSX.Element => {
 				</Box>
 			</Box>
 
-			<Box mt={4} display="flex" justifyContent="center" alignItems="center" flexDirection="column">
-				<Card sx={{ width: 500 }}>
+			{/* Cards Section */}
+			<Box
+				mt={4}
+				mb={4}
+				display="flex"
+				justifyContent="center"
+				alignItems="center"
+				flexDirection="column"
+				gap={4}
+				width="100%"
+			>
+				{/* Game Card */}
+				<Card sx={{ width: "100%", maxWidth: 500 }}>
 					<CardActionArea component={RouterLink} to="/game">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/GI7cZBC.jpeg" alt="game" />
-
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								ゲーム
 							</Typography>
-
 							<Typography variant="body2" sx={{ color: "text.secondary" }}>
 								2020年まではほとんど星のカービィシリーズしかプレイしていませんでした。
 								<br />
@@ -174,15 +218,14 @@ export const Home = (): JSX.Element => {
 					</CardActionArea>
 				</Card>
 
-				<Card sx={{ mt: 4, width: 500 }}>
+				{/* Programming Card */}
+				<Card sx={{ width: "100%", maxWidth: 500 }}>
 					<CardActionArea component={RouterLink} to="/programming">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/1ppHBfH.png" alt="programming" />
-
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								プログラミング
 							</Typography>
-
 							<Typography variant="body2" sx={{ color: "text.secondary" }}>
 								2019年、大学の授業でPythonを少しだけ触りました。
 								<br />
@@ -196,15 +239,14 @@ export const Home = (): JSX.Element => {
 					</CardActionArea>
 				</Card>
 
-				<Card sx={{ mt: 4, width: 500 }}>
+				{/* Mountain Card */}
+				<Card sx={{ width: "100%", maxWidth: 500 }}>
 					<CardActionArea component={RouterLink} to="/mountain">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/QnZxGKm.jpeg" alt="mountain" />
-
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								登山
 							</Typography>
-
 							<Typography variant="body2" sx={{ color: "text.secondary" }}>
 								初めての登山は小学3年生の時でした。
 								<br />
@@ -218,15 +260,14 @@ export const Home = (): JSX.Element => {
 					</CardActionArea>
 				</Card>
 
-				<Card sx={{ mt: 4, width: 500 }}>
+				{/* Music Card */}
+				<Card sx={{ width: "100%", maxWidth: 500 }}>
 					<CardActionArea component={RouterLink} to="/music">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/VmpSpUg.jpeg" alt="music" />
-
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								音楽
 							</Typography>
-
 							<Typography variant="body2" sx={{ color: "text.secondary" }}>
 								5歳からエレクトーンを習い始め、18年間続けました。
 								<br />
@@ -240,17 +281,16 @@ export const Home = (): JSX.Element => {
 					</CardActionArea>
 				</Card>
 
-				<Card sx={{ mt: 4, width: 500 }}>
+				{/* Study Card */}
+				<Card sx={{ width: "100%", maxWidth: 500 }}>
 					<CardActionArea component={RouterLink} to="/study">
 						<CardMedia component="img" height="140" image="https://i.imgur.com/mx4bOls.jpeg" alt="study" />
-
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								お勉強
 							</Typography>
-
 							<Typography variant="body2" sx={{ color: "text.secondary" }}>
-								所謂お勉強は得意です。
+								解るお勉強は得意です。
 								<br />
 								中学生で漢検2級、高校生で英検2級を取得しました。
 								<br />
