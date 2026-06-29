@@ -670,4 +670,26 @@ export const playedGameList: PlayedGame[] = [
 		description:
 			"カービィのエアライダーは、カービィシリーズのスピンオフ作品で、エアライドマシンを操縦してレースやバトルを楽しむゲームです。",
 	},
+	{
+		id: "68",
+		title: "Pacify",
+		thumbnailUrl:
+			"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/967050/24d904ac2a44db150c4155b5a04901c5b01750d8/header.jpg?t=1777775410",
+		playedAt: new Date("2026-03"),
+		releaseDate: new Date("2019-02-22"),
+		platform: "PC",
+		description:
+			"Pacifyは、プレイヤーが超自然的な生物を鎮め、弱体化させ、捕獲するために協力するホラーゲームです。最大4人での協力プレイが可能で、緊張感のある探索とパズル要素が特徴です。",
+	},
+	{
+		id: "69",
+		title: "MIMESIS",
+		thumbnailUrl:
+			"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2827200/12344cf4308921c50f6603b618dd197a2ec54263/header_alt_assets_1.jpg?t=1781771581",
+		playedAt: new Date("2026-06"),
+		releaseDate: new Date("2025-10-27"),
+		platform: "PC",
+		description:
+			"プレイヤーが共に挑むサバイバルホラーゲーム。呪われた雨が降ると仲間を完璧に真似る「ミメシス（Mimesis）」が現れ、かつてない緊張感に襲われる。",
+	},
 ];

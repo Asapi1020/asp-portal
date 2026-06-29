@@ -40,7 +40,7 @@ export const Header = (): JSX.Element => {
 			>
 				<Typography variant="h6" sx={{ flexGrow: 1 }}>
 					<Link component={RouterLink} to="/" color="inherit" underline="none">
-						あさぴっぴポータル
+						あさぴっぴポータル（開発中）
 					</Link>
 				</Typography>
 
